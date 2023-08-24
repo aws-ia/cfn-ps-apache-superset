@@ -1,0 +1,2 @@
+#!/bin/bash -ex
+aws sts assume-role --role-arn $1 --role-session-name 'wrapped-role' --external-id $2 --endpoint https://sts.us-east-2.amazonaws.com --region us-east-2 | jq '.Credentials + {"Version":1}'
