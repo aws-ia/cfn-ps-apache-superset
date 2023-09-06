@@ -6,4 +6,4 @@ PROJECT_PATH=${BASE_PATH}/project
 PROJECT_TYPE_PATH=${BASE_PATH}/projecttype
 
 cd $PROJECT_PATH
-cfn-lint --ignore-checks W -t templates/**/*.yaml -a /tmp/qs-cfn-lint-rules/qs_cfn_lint_rules/
+cfn-lint -t templates/**/*.yaml -a /tmp/qs-cfn-lint-rules/qs_cfn_lint_rules/
