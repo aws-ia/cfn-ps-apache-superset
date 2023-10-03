@@ -22,7 +22,7 @@ if echo "${DIFF_OUTPUT}" | grep "^diff --git a/docs/"; then
     asciidoctor --base-dir docs/ --backend=html5 -o ../index.html -w --doctype=book -a toc2 -a production_build docs/boilerplate/index_deployment_guide.adoc
     ## Create PR with index.html file
     CURRENT_BRANCH=$(git branch --show-current)
-    git checkout main
+    # git checkout main
     git checkout -b "${DOCS_BRANCH}"
     git add index.html
     git commit -m '(automated) rendered html deployment guide'
@@ -30,7 +30,7 @@ if echo "${DIFF_OUTPUT}" | grep "^diff --git a/docs/"; then
     gh pr create --title 'Generated deployment guide' --body "_This is an automated PR with rendered html file for the deployment guide. Please review it before merge_"
 else
     printf '\nNo changes detected in the /docs files. \n'
-fi  
+fi
 
 ##----------------------------------------------------
 ## Download taskcat overrides from AWS Secrets Manager
