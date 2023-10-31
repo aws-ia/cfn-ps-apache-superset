@@ -914,7 +914,7 @@ Refer to the <a href="https://github.com/aws-ia/cfn-ps-apache-superset" target="
 <p>This guide covers the information you need to deploy the Apache Superset Partner Solution in the AWS Cloud.</p>
 </div>
 <div class="paragraph">
-<p>This deployment supports many database management systems to store data that can be visualized through Apache Superset. Examples of supported database systems include <a href="https://docs.aws.amazon.com/athena/latest/ug/what-is.html" target="_blank" rel="noopener">Amazon Athena</a>, <a href="https://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html" target="_blank" rel="noopener">Amazon Redshift</a>, <a href="https://clickhouse.tech/" target="_blank" rel="noopener">ClickHouse</a>, MySQL, and PostgreSQL.</p>
+<p>This deployment supports many database management systems to store data that can be visualized through Apache Superset. Examples of supported database systems include <a href="https://docs.aws.amazon.com/athena/latest/ug/what-is.html" target="_blank" rel="noopener">Amazon Athena</a>, <a href="https://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html" target="_blank" rel="noopener">Amazon Redshift</a>, <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html">Amazon DynamoDB</a>, <a href="https://clickhouse.tech/" target="_blank" rel="noopener">ClickHouse</a>, MySQL, and PostgreSQL.</p>
 </div>
 <div class="paragraph">
 <p>This Partner Solution is for users who want to use Apache Superset as a business intelligence platform for transitioning from data-driven cognition to data-driven decision making, following AWS best practices.</p>
@@ -940,7 +940,7 @@ Refer to the <a href="https://github.com/aws-ia/cfn-ps-apache-superset" target="
 <p>Platform elasticity and scalability. Users do not need to maintain the infrastructure and associated resource scheduling.</p>
 </li>
 <li>
-<p>Visualizations for existing data, preinstalled SQL, PostgreSQL, Amazon Redshift, Amazon Athena, and ClickHouse data-source driver.</p>
+<p>Visualizations for existing data, preinstalled SQL, PostgreSQL, Amazon Redshift, Amazon Athena, Amazon DynamoDB, and ClickHouse data-source driver.</p>
 </li>
 <li>
 <p>Future trend predictions, a preinstalled timing-prediction algorithm that is based on imported data.</p>
@@ -969,7 +969,7 @@ AWS Cloud.</p>
 </div>
 <div id="architecture1" class="imageblock">
 <div class="content">
-<img src="docs/deployment_guide/images/architecture_diagram.png" alt="Architecture">
+<img src="images/architecture_diagram_2.png" alt="Architecture">
 </div>
 <div class="title">Figure 1. Partner Solution architecture for Apache Superset on AWS</div>
 </div>
@@ -1004,6 +1004,9 @@ best practices, to provide you with your own virtual network on AWS.*</p>
 <li>
 <p>AWS Cloud Map, a discovery service for application resources.</p>
 </li>
+<li>
+<p>AWS Secrets Manager gerete and store a key as "SECRET_KEY" for securely signing the session cookie and encrypting sensitive information on the database.</p>
+</li>
 </ul>
 </div>
 </li>
@@ -1014,7 +1017,7 @@ best practices, to provide you with your own virtual network on AWS.*</p>
 <p>Amazon Redshift, a fully managed, data-warehouse service.</p>
 </li>
 <li>
-<p>Supported database systems, such as Amazon Athena, Amazon Redshift, ClickHouse, MySQL, and PostgreSQL.</p>
+<p>Supported database systems, such as Amazon Athena, Amazon Redshift, Amazon DynamoDB, ClickHouse, MySQL, and PostgreSQL.</p>
 </li>
 </ul>
 </div>
